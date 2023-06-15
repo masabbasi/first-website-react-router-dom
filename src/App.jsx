@@ -1,25 +1,23 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar/Navbar.jsx";
-import Banner from "./components/Banner/Banner.jsx";
-import Blog from "./components/Blog/Blog.jsx";
-import Products from "./components/Products/Product.jsx";
-import Aboutus from "./components/Aboutus/Aboutus.jsx";
-import Contactus from "./components/Contactus/Contactus.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home/Home.jsx";
+import ProductsPage from "./components/Products/ProductsPage.jsx";
+import AboutusPage from "./components/Aboutus/AboutusPage.jsx";
+import BlogPage from "./components/Blog/BlogPage.jsx";
+import ContactusPage from "./components/Contactus/ContactusPage.jsx";
 import "./main.css"
 
 function App() {
-	const [toggelDarkMode, setToggelDarkMode] = useState(false);
   return (
-		<div className={toggelDarkMode ? "darkMode" : ""}>
-		<Navbar toggelDarkMode={toggelDarkMode} setToggelDarkMode={setToggelDarkMode} />
-		<Banner />
-		<Products toggelDarkMode={toggelDarkMode} />
-		<Aboutus toggelDarkMode={toggelDarkMode} />
-		<Blog toggelDarkMode={toggelDarkMode} />
-		<Contactus toggelDarkMode={toggelDarkMode} />
-		<Footer />
-		</div>
+		<BrowserRouter>
+		<Routes>
+			<Route path="/first-website-react-router-dom/" element={<Home />} />
+			<Route path="/first-website-react-router-dom/products" element={<ProductsPage />} />
+			<Route path="/first-website-react-router-dom/aboutus" element={<AboutusPage />} />
+			<Route path="/first-website-react-router-dom/blog" element={<BlogPage />} />
+			<Route path="/first-website-react-router-dom/contactus" element={<ContactusPage />} />
+		</Routes>
+		</BrowserRouter>
 	);
 }
 

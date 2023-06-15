@@ -4,8 +4,9 @@ import logo from "../../Images/logo.png";
 import styles from "./Navbar.module.css";
 import sun from "../../Images/sun.png";
 import moon from "../../Images/moon.png";
+import { Link } from "react-router-dom";
 
-const Navbar = ({toggelDarkMode,setToggelDarkMode}) => {
+const Navbar = ({ toggelDarkMode, setToggelDarkMode }) => {
   const [toggelHamburger, setToggelHamburger] = useState(false);
   const hamburgerHandler = () => {
     setToggelHamburger(!toggelHamburger);
@@ -15,28 +16,20 @@ const Navbar = ({toggelDarkMode,setToggelDarkMode}) => {
   };
 
   return (
-    <header className={`${styles.header} ${toggelDarkMode && styles.darkHeader}`}>
+    <header
+      className={`${styles.header} ${toggelDarkMode && styles.darkHeader}`}
+    >
       <div className={styles.menu}>
         <ul
           className={`${styles.list} ${
             toggelHamburger && styles.listOpenHamburger
           }`}
         >
-          <a href="#">
-            <li>Home</li>
-          </a>
-          <a href="#">
-            <li>Product</li>
-          </a>
-          <a href="#">
-            <li>About Us</li>
-          </a>
-          <a href="#">
-            <li>Blog</li>
-          </a>
-          <a href="#">
-            <li>Contact US</li>
-          </a>
+          <Link className={styles.link} to="/first-website-react-router-dom/">Home</Link>
+          <Link className={styles.link} to="/first-website-react-router-dom/products">Products</Link>
+          <Link className={styles.link} to="/first-website-react-router-dom/aboutus">About US</Link>
+          <Link className={styles.link} to="/first-website-react-router-dom/blog">Blog</Link>
+          <Link className={styles.link} to="/first-website-react-router-dom/contactus">Contact Us</Link>
         </ul>
         <div
           className={`${styles.hamburger__menu} ${
