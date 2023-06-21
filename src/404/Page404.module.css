@@ -1,0 +1,15 @@
+.container {
+	height: 70vh;
+	background-color: #eeeded;
+	color: black;
+	padding: 20px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.darkContainer {
+	background-color: rgb(59, 44, 119);
+	color: rgb(224, 215, 215);
+}

@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 import styles from "./Aboutus.module.css";
 import Title from "../Title/Title.jsx";
 
