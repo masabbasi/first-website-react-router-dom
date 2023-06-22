@@ -6,7 +6,7 @@ import { productData } from "../../Data/product_data.js";
 
 const Products = ({ toggelDarkMode }) => {
   return (
-    <>
+    <div className={styles.productContainer}>
       <Title title={"Products"} toggelDarkMode={toggelDarkMode} />
       <div className={styles.container}>
         {productData.map((product) => {
@@ -17,7 +17,7 @@ const Products = ({ toggelDarkMode }) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

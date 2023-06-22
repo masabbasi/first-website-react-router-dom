@@ -6,7 +6,7 @@ import { blogData } from "../../Data/blog_data.js";
 
 const Blog = ({ toggelDarkMode }) => {
   return (
-    <>
+    <div className={styles.blogContainer}>
       <Title title={"Blog"} toggelDarkMode={toggelDarkMode} />
       <div className={styles.container}>
         {blogData.map((post) => {
@@ -17,7 +17,7 @@ const Blog = ({ toggelDarkMode }) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
