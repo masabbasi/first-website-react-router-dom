@@ -12,8 +12,8 @@ const Detail= ({toggelDarkMode})=>{
 		<div className={`${styles.detail} ${toggelDarkMode && styles.darkContainer}`}>
 		{(product ?<h1>{product.title}</h1>:<h1>{post.title}</h1>)}
 		{(product ?
-		(<Link className={styles.back} to={`/first-website-react-router-dom/products`}>Back</Link>) :
-		(<Link className={styles.back} to={`/first-website-react-router-dom/blog`}>Back</Link>))}
+		(<Link className={styles.back} to={`/first-website-react-router-dom/products`}>Back To Products</Link>) :
+		(<Link className={styles.back} to={`/first-website-react-router-dom/blog`}>Back To Blog</Link>))}
 
 		</div>
 	)
