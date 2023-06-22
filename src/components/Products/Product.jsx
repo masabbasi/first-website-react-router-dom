@@ -2,22 +2,22 @@
 import styles from "./Products.module.css";
 import Title from "../Title/Title.jsx";
 import Card from "../Card/Card.jsx";
-import image5 from "../../Images/image5.jpg";
-import image6 from "../../Images/image6.jpg";
-import image7 from "../../Images/image7.jpg";
-import image8 from "../../Images/image8.jpg";
+import { productData } from "../../Data/product_data.js";
 
-const Products = ({toggelDarkMode}) => {
+const Products = ({ toggelDarkMode }) => {
   return (
-<>
-<Title title={"Products"} toggelDarkMode={toggelDarkMode} />
-<div className={styles.container}>
-<Card image={image5} title={"Product 1"} description={"lorem lorem lorem"} toggelDarkMode={toggelDarkMode} />
-<Card image={image6} title={"Product 2"} description={"lorem lorem lorem"} toggelDarkMode={toggelDarkMode} />
-<Card image={image7} title={"Product 3"} description={"lorem lorem lorem"} toggelDarkMode={toggelDarkMode} />
-<Card image={image8} title={"Product 4"} description={"lorem lorem lorem"} toggelDarkMode={toggelDarkMode} />
-</div>
-	</>
+    <>
+      <Title title={"Products"} toggelDarkMode={toggelDarkMode} />
+      <div className={styles.container}>
+        {productData.map((product) => {
+          return (
+            // <div key={product.id}>
+            <Card {...product} toggelDarkMode={toggelDarkMode} />
+            /* </div> */
+          );
+        })}
+      </div>
+    </>
   );
 };
 

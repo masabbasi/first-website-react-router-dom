@@ -15,6 +15,10 @@ const Navbar = ({ toggelDarkMode, setToggelDarkMode }) => {
     setToggelDarkMode(!toggelDarkMode);
   };
 
+	const closeMenuHandler = ()=>{
+		setToggelHamburger(false)
+	};
+
   return (
     <header
       className={`${styles.header} ${toggelDarkMode && styles.darkHeader}`}
@@ -23,13 +27,13 @@ const Navbar = ({ toggelDarkMode, setToggelDarkMode }) => {
         <ul
           className={`${styles.list} ${
             toggelHamburger && styles.listOpenHamburger
-          }`}
+          } ${toggelDarkMode && styles.darkHamburger}`}
         >
-          <Link className={styles.link} to="/first-website-react-router-dom/">Home</Link>
-          <Link className={styles.link} to="/first-website-react-router-dom/products">Products</Link>
-          <Link className={styles.link} to="/first-website-react-router-dom/aboutus">About US</Link>
-          <Link className={styles.link} to="/first-website-react-router-dom/blog">Blog</Link>
-          <Link className={styles.link} to="/first-website-react-router-dom/contactus">Contact Us</Link>
+          <Link onClick={closeMenuHandler} className={styles.link} to="/first-website-react-router-dom/">Home</Link>
+          <Link onClick={closeMenuHandler} className={styles.link} to="/first-website-react-router-dom/products">Products</Link>
+          <Link onClick={closeMenuHandler} className={styles.link} to="/first-website-react-router-dom/aboutus">About US</Link>
+          <Link onClick={closeMenuHandler} className={styles.link} to="/first-website-react-router-dom/blog">Blog</Link>
+          <Link onClick={closeMenuHandler} className={styles.link} to="/first-website-react-router-dom/contactus">Contact Us</Link>
         </ul>
         <div
           className={`${styles.hamburger__menu} ${

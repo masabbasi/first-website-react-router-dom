@@ -7,9 +7,17 @@
 
 
 .darkMode {
+	min-height:100vh;
 	background-color: rgb(22, 13, 58);
 }
 
-body,#root {
-	height: 100vh;
+body {
+	min-height: 100vh;
+	position: relative;
+}
+
+footer {
+	width: 100%;
+position: absolute;
+bottom: 0;
 }

@@ -1,13 +1,28 @@
 // import React from 'react';
+import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
 
-const Card = ({image,title,description,toggelDarkMode}) => {
+const Card = ({ id, image, title, description, toggelDarkMode }) => {
   return (
-<div className={`${styles.container} ${toggelDarkMode && styles.darkContainer}`}>
-	<img src={image} />
-	<a href="#"><h3>{title}</h3></a>
-	<p>{description}</p>
-</div>
+    <div
+      className={`${styles.container} ${
+        toggelDarkMode && styles.darkContainer
+      }`}
+    >
+      <img src={image} />
+      <a href="#">
+        <h3>{title}</h3>
+      </a>
+      <p>
+        {description}
+        <Link
+          to={`/first-website-react-router-dom/detail/${id}`}
+          className={styles.more}
+        >
+          See More
+        </Link>
+      </p>
+    </div>
   );
 };
 

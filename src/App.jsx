@@ -8,19 +8,23 @@ import Contactus from "./components/Contactus/Contactus.jsx";
 import "./main.css";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import Page404 from "./404/Page404.jsx";
+import Page404 from "./components/404/Page404.jsx";
+import Detail from "./components/Card/Detail.jsx";
 
 function App() {
   const [toggelDarkMode, setToggelDarkMode] = useState(false);
   return (
     <BrowserRouter>
-      <div className={toggelDarkMode ? "darkMode" : ""}>
+      <div className={toggelDarkMode ? "darkMode" : "lightMode"}>
         <Navbar
           toggelDarkMode={toggelDarkMode}
           setToggelDarkMode={setToggelDarkMode}
         />
         <Routes>
-          <Route path="/first-website-react-router-dom/" element={<Home toggelDarkMode={toggelDarkMode} />} />
+          <Route
+            path="/first-website-react-router-dom/"
+            element={<Home toggelDarkMode={toggelDarkMode} />}
+          />
           <Route
             path="/first-website-react-router-dom/products"
             element={<Products toggelDarkMode={toggelDarkMode} />}
@@ -37,7 +41,14 @@ function App() {
             path="/first-website-react-router-dom/contactus"
             element={<Contactus toggelDarkMode={toggelDarkMode} />}
           />
-					<Route path="*" element={<Page404 toggelDarkMode={toggelDarkMode} />} />
+          <Route
+            path="*"
+            element={<Page404 toggelDarkMode={toggelDarkMode} />}
+          />
+          <Route
+            path="/first-website-react-router-dom/detail/:id"
+            element={<Detail toggelDarkMode={toggelDarkMode} />}
+          />
         </Routes>
         <Footer />
       </div>

@@ -5,7 +5,10 @@ const Page404 = ({toggelDarkMode})=>{
 
 return(
 	<div className={`${styles.container} ${toggelDarkMode && styles.darkContainer}`}>
-	<h1>404</h1>
+	<h1>404
+		<br />
+		Not Found
+	</h1>
 	</div>
 )
 

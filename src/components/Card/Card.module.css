@@ -41,6 +41,14 @@ text-decoration: none;
 	padding: 5px;
 }
 
+.more {
+	margin-left: 5px;
+	border-radius: 5px;
+	background-color: darkcyan;
+	color: rgb(255, 255, 255);
+	padding: 5px;
+}
+
 @media (max-width:620px) {
 	.container {
 		width:100%;}
